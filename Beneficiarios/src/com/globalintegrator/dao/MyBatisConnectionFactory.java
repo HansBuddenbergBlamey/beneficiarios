@@ -17,17 +17,13 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
  */
 
 /**
- *  
- * 
+ * Instancia la sesion a la base de datos.
  */
 public class MyBatisConnectionFactory {
-    /** 
-     * Crea de una instancia de conexion session para base de datos
-     * 
-     * @Param SqlSessionFactory Crea la conexion a una sesion a base de datos.
-     * @exception fileNotFoundException Si no se encuentra archivo.
-     * @throws fileNotFoundException.printStackTrace description.
-     */
+
+    /**
+    * @param sqlSessionFactory Genera la sesion a la base de datos.
+    */
     private static SqlSessionFactory sqlSessionFactory;
     static {
         try {
@@ -36,6 +32,10 @@ public class MyBatisConnectionFactory {
             if (sqlSessionFactory == null) {
                 sqlSessionFactory = new SqlSessionFactoryBuilder().build(reader);
             }
+        /**
+         * @param fileNotFoundException No se encontro dato.
+         * @throws Muestra error correspondiente. 
+         */
         } catch (FileNotFoundException fileNotFoundException) {
             fileNotFoundException.printStackTrace();
         } catch (IOException iOException) {

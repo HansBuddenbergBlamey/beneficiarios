@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+           "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- Mapper de MyBatis -->
+
+<mapper namespace="com.globalintegrator.data.SPMapper">
+    <!-- Inserta -->
+    <select id="callInsertaBeneficiario" parameterType="Beneficiario" statementType="CALLABLE">
+        { CALL BENEFICIARIO_FATCA.Inserta_Beneficiario(
+            #{NumPoliza, mode=IN, jdbcType=INTEGER},
+            #{RutBeneficiario, mode=IN, jdbcType=VARCHAR},
+            #{NumSiniestro, mode=IN, jdbcType=INTEGER},
+            #{FkIdSistOrigen, mode=IN, jdbcType=INTEGER},
+            #{Res, mode=OUT, jdbcType=VARCHAR})}
+    </select>
+
+    <!-- Actualiza -->
+    <select id="callActualizaBeneficiario" parameterType="Beneficiario" statementType="CALLABLE">
+        { CALL BENEFICIARIO_FATCA.Update_Beneficiario(
+            #{In_Num_Poliza, mode=IN, jdbcType=INTEGER},
+            #{In_Rut_Beneficiario, mode=IN, jdbcType=VARCHAR},
+            #{In_Num_Siniestro, mode=IN, jdbcType=INTEGER},
+            #{In_Num_Propuesta, mode=IN, jdbcType=VARCHAR},
+            #{In_Nom1, mode=IN, jdbcType=VARCHAR},
+            #{In_Nom2, mode=IN, jdbcType=VARCHAR},
+            #{In_Apellido1, mode=IN, jdbcType=VARCHAR},
+            #{In_Apellido2, mode=IN, jdbcType=VARCHAR},
+            #{In_Nacionalidad1, mode=IN, jdbcType=VARCHAR},
+            #{In_Nacionalidad2, mode=IN, jdbcType=VARCHAR},
+            #{In_Nacionalidad3, mode=IN, jdbcType=VARCHAR},
+            #{In_Fecha_Nacimiento, mode=IN, jdbcType=INTEGER},
+            #{In_Pais_Nacimiento, mode=IN, jdbcType=VARCHAR},
+            #{In_Tin, mode=IN, jdbcType=VARCHAR},
+            #{In_Dir_Usa, mode=IN, jdbcType=VARCHAR},
+            #{In_Ciudad_Usa, mode=IN, jdbcType=VARCHAR},
+            #{In_Estado_Usa, mode=IN, jdbcType=VARCHAR},
+            #{In_Cod_Postal_Usa, mode=IN, jdbcType=VARCHAR},
+            #{In_Fono_Usa, mode=IN, jdbcType=VARCHAR},
+            #{In_Envio_Order, mode=IN, jdbcType=INTEGER},
+            #{In_Poder_Notarial, mode=IN, jdbcType=INTEGER},
+            #{In_Dir_Cp, mode=IN, jdbcType=VARCHAR},
+            #{In_Ciudad_Cp, mode=IN, jdbcType=VARCHAR},
+            #{In_Estado_Cp, mode=IN, jdbcType=VARCHAR},
+            #{In_Cod_Postal_Cp, mode=IN, jdbcType=VARCHAR},
+            #{In_Fecha_Form, mode=IN, jdbcType=INTEGER},
+            #{In_Monto_Poliza, mode=IN, jdbcType=VARCHAR},
+            #{Res, mode=OUT, jdbcType=VARCHAR})}
+    </select>
+    
+    <!-- Consulta Estado -->
+    <select id="callConsultaEstadoBeneficiario" parameterType="Beneficiario" statementType="CALLABLE">
+        { CALL BENEFICIARIO_FATCA.Consulta_Estado_Beneficiario(
+            #{NumPoliza, mode=IN, jdbcType=INTEGER},
+            #{RutBeneficiario, mode=IN, jdbcType=VARCHAR},
+            #{NumSiniestro, mode=IN, jdbcType=INTEGER},
+            #{FkIdSistOrigen, mode=IN, jdbcType=INTEGER},
+            #{Res, mode=OUT, jdbcType=VARCHAR},
+            #{Estado, mode=OUT, jdbcType=VARCHAR})}
+    </select>
+    
+    <!-- Actualiza Estado -->
+    <select id="callActualizaEstadoBeneficiario" parameterType="Beneficiario" statementType="CALLABLE">
+        { CALL BENEFICIARIO_FATCA.Update_Estado_Beneficiario(
+            #{NumPoliza, mode=IN, jdbcType=INTEGER},
+            #{RutBeneficiario, mode=IN, jdbcType=VARCHAR},
+            #{NumSiniestro, mode=IN, jdbcType=INTEGER},
+            #{FkIdSistOrigen, mode=IN, jdbcType=INTEGER},
+            #{FkIdEstadoNew, mode=IN, jdbcType=INTEGER},
+            #{Res, mode=OUT, jdbcType=VARCHAR})}
+    </select>
+</mapper>

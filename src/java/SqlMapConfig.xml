@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+	PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+<!--    Alias   -->
+    <typeAliases>
+            <typeAlias alias="Beneficiario" type="com.globalintegrator.model.Beneficiario"/>
+    </typeAliases>
+        
+<!--	Oracle   -->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED" >
+                <property name="driver" value="oracle.jdbc.OracleDriver"/>
+                <property name="url" value="jdbc:oracle:thin:@mlftest01:1543:metweb"/>
+                <property name="username" value="WEB_ADMIN"/>
+                <property name="password" value="prueba"/>
+                <property name="poolMaximumActiveConnections" value="50"/>
+            </dataSource>
+        </environment>
+    </environments>
+
+<!--    Mapper  -->
+    <mappers>
+        <mapper resource="com/globalintegrator/data/SPMapper.xml"/>
+    </mappers>
+
+</configuration>

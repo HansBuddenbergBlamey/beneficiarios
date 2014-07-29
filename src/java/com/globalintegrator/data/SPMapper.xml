@@ -32,7 +32,9 @@
             #{In_Nacionalidad3, mode=IN, jdbcType=VARCHAR},
             #{In_Fecha_Nacimiento, mode=IN, jdbcType=INTEGER},
             #{In_Pais_Nacimiento, mode=IN, jdbcType=VARCHAR},
+            #{In_Ciudadania_Usa, mode=IN, jdbcType=INTEGER},
             #{In_Tin, mode=IN, jdbcType=VARCHAR},
+            #{In_Residencia_Usa, mode=IN, jdbcType=INTEGER},
             #{In_Dir_Usa, mode=IN, jdbcType=VARCHAR},
             #{In_Ciudad_Usa, mode=IN, jdbcType=VARCHAR},
             #{In_Estado_Usa, mode=IN, jdbcType=VARCHAR},
@@ -40,6 +42,7 @@
             #{In_Fono_Usa, mode=IN, jdbcType=VARCHAR},
             #{In_Envio_Order, mode=IN, jdbcType=INTEGER},
             #{In_Poder_Notarial, mode=IN, jdbcType=INTEGER},
+            #{In_Casilla_Postal_Usa, mode=IN, jdbcType=INTEGER},
             #{In_Dir_Cp, mode=IN, jdbcType=VARCHAR},
             #{In_Ciudad_Cp, mode=IN, jdbcType=VARCHAR},
             #{In_Estado_Cp, mode=IN, jdbcType=VARCHAR},
@@ -55,7 +58,6 @@
             #{NumPoliza, mode=IN, jdbcType=INTEGER},
             #{RutBeneficiario, mode=IN, jdbcType=VARCHAR},
             #{NumSiniestro, mode=IN, jdbcType=INTEGER},
-            #{FkIdSistOrigen, mode=IN, jdbcType=INTEGER},
             #{Res, mode=OUT, jdbcType=VARCHAR},
             #{Estado, mode=OUT, jdbcType=VARCHAR})}
     </select>
@@ -66,7 +68,6 @@
             #{NumPoliza, mode=IN, jdbcType=INTEGER},
             #{RutBeneficiario, mode=IN, jdbcType=VARCHAR},
             #{NumSiniestro, mode=IN, jdbcType=INTEGER},
-            #{FkIdSistOrigen, mode=IN, jdbcType=INTEGER},
             #{FkIdEstadoNew, mode=IN, jdbcType=INTEGER},
             #{Res, mode=OUT, jdbcType=VARCHAR})}
     </select>

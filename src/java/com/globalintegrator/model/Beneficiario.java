@@ -26,7 +26,9 @@ public class Beneficiario {
     private String In_Nacionalidad3;
     private int In_Fecha_Nacimiento;
     private String In_Pais_Nacimiento;
+    private int In_Ciudadania_Usa;
     private String In_Tin;
+    private int In_Residencia_Usa;
     private String In_Dir_Usa;
     private String In_Ciudad_Usa;
     private String In_Estado_Usa;
@@ -34,6 +36,7 @@ public class Beneficiario {
     private String In_Fono_Usa;
     private int In_Envio_Order;
     private int In_Poder_Notarial;
+    private int In_Casilla_Postal_Usa;
     private String In_Dir_Cp;
     private String In_Ciudad_Cp;
     private String In_Estado_Cp;
@@ -527,6 +530,48 @@ public class Beneficiario {
      */
     public void setFkIdEstadoNew(int FkIdEstadoNew) {
         this.FkIdEstadoNew = FkIdEstadoNew;
+    }
+
+    /**
+     * @return the In_Ciudadania_Usa
+     */
+    public int getIn_Ciudadania_Usa() {
+        return In_Ciudadania_Usa;
+    }
+
+    /**
+     * @param In_Ciudadania_Usa the In_Ciudadania_Usa to set
+     */
+    public void setIn_Ciudadania_Usa(int In_Ciudadania_Usa) {
+        this.In_Ciudadania_Usa = In_Ciudadania_Usa;
+    }
+
+    /**
+     * @return the In_Residencia_Usa
+     */
+    public int getIn_Residencia_Usa() {
+        return In_Residencia_Usa;
+    }
+
+    /**
+     * @param In_Residencia_Usa the In_Residencia_Usa to set
+     */
+    public void setIn_Residencia_Usa(int In_Residencia_Usa) {
+        this.In_Residencia_Usa = In_Residencia_Usa;
+    }
+
+    /**
+     * @return the In_Casilla_Postal_Usa
+     */
+    public int getIn_Casilla_Postal_Usa() {
+        return In_Casilla_Postal_Usa;
+    }
+
+    /**
+     * @param In_Casilla_Postal_Usa the In_Casilla_Postal_Usa to set
+     */
+    public void setIn_Casilla_Postal_Usa(int In_Casilla_Postal_Usa) {
+        this.In_Casilla_Postal_Usa = In_Casilla_Postal_Usa;
     }
 
 }

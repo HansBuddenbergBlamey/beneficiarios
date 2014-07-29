@@ -91,6 +91,7 @@ public interface SPMapper {
      *
      * @param beneficiario5
      * @return
+     *
      */
     @Select(value= "{ CALL BENEFICIARIO_FATCA.Update_Estado_Beneficiario( #{NumPoliza, mode=IN, jdbcType=INTEGER}, #{RutBeneficiario, mode=IN, jdbcType=VARCHAR}, #{NumSiniestro, mode=IN, jdbcType=INTEGER}, #{FkIdEstadoNew, mode=IN, jdbcType=INTEGER}, #{res, mode=OUT, jdbcType=VARCHAR} )}")
     @Options(statementType = StatementType.CALLABLE)                      
